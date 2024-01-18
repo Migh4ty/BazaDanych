@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginRight="10sp"
+        android:text="@string/danepracownika"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginRight="10sp"
+        android:ems="10"
+        android:hint="@string/imie"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:autofillHints=""
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginRight="10sp"
+        android:ems="10"
+        android:hint="@string/nazwisko"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#8D6E63"
+        android:autofillHints=""
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginRight="10sp"
+        android:minHeight="48dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginRight="10sp"
+        android:text="@string/password"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginRight="10sp"
+        android:ems="10"
+        android:hint="@string/ile_znak_w"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#8D6E63"
+        android:autofillHints=""
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginRight="10sp"
+        android:minHeight="48dp"
+        android:text="@string/miw"
+        tools:ignore="VisualLintButtonSize" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginRight="10sp"
+        android:minHeight="48dp"
+        android:text="@string/cyf"
+        tools:ignore="VisualLintButtonSize" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginRight="10sp"
+        android:minHeight="48dp"
+        android:text="@string/zs"
+        tools:ignore="VisualLintButtonSize" />
+
+    <Button
+        android:id="@+id/passbutton"
+        android:layout_width="173dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginRight="10sp"
+        android:background="@color/bc"
+        android:text="@string/gh"
+        android:textColor="#000000"
+        android:textColorHighlight="@color/design_default_color_primary"
+        android:textColorLink="@color/design_default_color_primary"
+        tools:ignore="RtlHardcoded" />
+
+    <Button
+        android:id="@+id/subbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginRight="10sp"
+        android:background="@color/bc"
+        android:text="@string/acc"
+        android:textColor="#000000"
+        tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+</LinearLayout>
