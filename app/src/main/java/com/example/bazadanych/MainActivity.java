@@ -1,14 +1,18 @@
 package com.example.bazadanych;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
-    public class MainActivity extends AppCompatActivity {
+    public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private EditText dlugoscHasla;
     private CheckBox duzeliteryCheckbox, cyfryCheckbox, specjalneznakiCheckbox;
@@ -20,6 +24,13 @@ import java.util.Random;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Spinner spinner = findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.stanowisko, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+        View imiePracownika = findViewById(R.id.editTextText);
+        View nazwiskoPracownika = findViewById(R.id.editTextText2);
         dlugoscHasla = findViewById(R.id.editTextText3);
         duzeliteryCheckbox = findViewById(R.id.checkBox);
         cyfryCheckbox = findViewById(R.id.checkBox2);
@@ -34,7 +45,7 @@ import java.util.Random;
         zatwierdzButton.setOnClickListener(view -> {
             saveEmployeeData();
             resetFields();
-            Toast.makeText(MainActivity.this, danePracownikow, Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Imię: " + imiePracownika.toString() + "Nazwisko: " + nazwiskoPracownika.toString(), Toast.LENGTH_SHORT).show();
         });
     }
 
@@ -78,4 +89,15 @@ import java.util.Random;
         password = "";
         danePracownikow = "";
     }
-}
+
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
+            String text = parent.getItemAtPosition(position).toString();
+            Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> adapterView) {
+
+        }
+    }

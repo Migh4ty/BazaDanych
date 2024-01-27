@@ -11,4 +11,10 @@
     <string name="imie">Imię</string>
     <string name="nazwisko">Nazwisko</string>
     <string name="ile_znak_w">Ile znaków?</string>
+    <string-array name="stanowisko">
+        <item>Kierownik</item>
+        <item>Starszy programista</item>
+        <item>Młodszy programista</item>
+        <item>Tester</item>
+    </string-array>
 </resources>
