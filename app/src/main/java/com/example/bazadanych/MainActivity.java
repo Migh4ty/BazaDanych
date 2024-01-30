@@ -17,7 +17,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
-    public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
         private EditText dlugoscHasla;
         private CheckBox duzeliteryCheckbox, cyfryCheckbox, specjalneznakiCheckbox;
@@ -57,10 +57,7 @@ import java.util.Random;
                 imie = ((EditText) findViewById(R.id.editTextText)).getText().toString();
                 nazwisko = ((EditText) findViewById(R.id.editTextText2)).getText().toString();
                 stanowisko = ((Spinner) findViewById(R.id.spinner)).getSelectedItem().toString();
-                if (imie.isEmpty() || nazwisko.isEmpty()) {
-                    Toast.makeText(this, "Wypełnij wszystkie pola!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+                dbHelper.dodajRekordDoBazyDanych();
                 Toast.makeText(this, "Dodano pracownika!\nImię: " + imie + "\nNazwisko: " + nazwisko + "\nStanowisko: " + stanowisko + "\nHasło: " + password, Toast.LENGTH_LONG).show();
             });
         }
@@ -139,12 +136,15 @@ import java.util.Random;
         public void dodajRekordDoBazyDanych() {
             SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-            ContentValues values = new ContentValues();
-            values.put(DBHelper.COLUMN_IMIE, imie);
-            values.put(DBHelper.COLUMN_NAZWISKO, nazwisko);
-            values.put(DBHelper.COLUMN_STANOWISKO, stanowisko);
-            values.put(DBHelper.COLUMN_HASLO, password);
+            imie = ((EditText) findViewById(R.id.editTextText)).getText().toString();
+            nazwisko = ((EditText) findViewById(R.id.editTextText2)).getText().toString();
+            stanowisko = ((Spinner) findViewById(R.id.spinner)).getSelectedItem().toString();
 
+            ContentValues values = new ContentValues();
+            values.put(DBHelper.COLUMN_IMIE, MainActivity.this.imie);
+            values.put(DBHelper.COLUMN_NAZWISKO, MainActivity.this.nazwisko);
+            values.put(DBHelper.COLUMN_STANOWISKO, MainActivity.this.stanowisko);
+            values.put(DBHelper.COLUMN_HASLO, password);
             db.insert(DBHelper.TABLE_NAME, null, values);
             db.close();
         }
